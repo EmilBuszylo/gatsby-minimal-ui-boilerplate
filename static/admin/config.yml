@@ -1,0 +1,42 @@
+backend:
+  name: test-repo
+
+publish_mode: editorial_workflow
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    fields:
+      - {
+          label: 'Page template',
+          name: 'pageTemplate',
+          widget: 'hidden',
+          default: 'post',
+        }
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+
+collections:
+  - name: products
+    label: Products
+    folder: content/products
+    create: true
+    fields:
+      - {
+          label: 'Page template',
+          name: 'pageTemplate',
+          widget: 'hidden',
+          default: 'product',
+        }
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
