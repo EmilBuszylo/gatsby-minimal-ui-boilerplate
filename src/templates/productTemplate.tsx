@@ -23,16 +23,6 @@ const productTemplate: React.FC<ProductTemplateProps> = ({ data }) => {
       />
       <h1>{post.frontmatter.title}</h1>
       <MDXRenderer>{post.body}</MDXRenderer>
-
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      ></ul>
     </Layout>
   )
 }

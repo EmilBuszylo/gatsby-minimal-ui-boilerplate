@@ -67,11 +67,22 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     })
 
     allData.map(element => {
+      if (element.node.frontmatter.pageTemplate === 'homePageTemplate') {
+        pathName = '/'
+        component = path.resolve(`src/pages/index.tsx`)
+      } else {
+        ;(pathName =
+          element.node.frontmatter.path ||
+          `${element.node.frontmatter.pagePrefixPath}${element.node.fields.slug}`),
+          (component = path.resolve(
+            `./src/templates/${String(
+              element.node.frontmatter.pageTemplate
+            )}.tsx`
+          ))
+      }
       createPage({
-        path: `${element.node.frontmatter.pagePrefixPath}${element.node.fields.slug}`,
-        component: path.resolve(
-          `./src/templates/${String(element.node.frontmatter.pageTemplate)}.tsx`
-        ),
+        path: pathName,
+        component,
         context: {
           slug: element.node.fields.slug,
         },

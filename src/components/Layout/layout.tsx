@@ -27,10 +27,9 @@ export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
             <Link to="/products">Products</Link>
             <Link to="/404">404</Link>
           </NavigationExample>
-          {console.log(location)}
           <PageContent>{children}</PageContent>
           <Footer>
-            © {new Date().getFullYear()}, Built with
+            © {new Date().getFullYear()}, Built with{' '}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </Footer>
         </Wrapper>

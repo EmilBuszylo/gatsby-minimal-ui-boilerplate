@@ -5,22 +5,29 @@ title: Home page
 date: '2019-01-05T22:12:03.284Z'
 ---
 
-## Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+## Gatsby minimal boilerplate for quick start
 
-Cras aliquam efficitur nisi ac pharetra. Fusce a ullamcorper massa. Fusce eget urna ultrices, tincidunt nisi ut, vehicula metus. Sed accumsan ante venenatis, sollicitudin mi id, interdum ex. Nulla vel pharetra ipsum, eu suscipit neque. Morbi at finibus arcu, at porta leo. Curabitur pellentesque molestie quam, eu sodales ex consectetur et. Aliquam nec quam ligula. Fusce vitae urna ut purus pulvinar venenatis.
+### Preface
 
-Nulla malesuada, dui sit amet dictum aliquam, tellus risus rutrum ex, sit amet ultrices enim elit eu lorem. Donec semper felis at faucibus gravida.
-[Lorem Ipsum!](https://www.lipsum.com/feed/html).
+When I wanted start my new gatsby project, lost a lot of time searching a matching template for my needs.
 
-> Cras aliquam efficitur nisi ac pharetra.
-> Aliquam nec quam ligula.
-> Fusce vitae urna ut purus pulvinar venenatis.
-> Nulla vel pharetra ipsum, eu suscipit neque.
-> In at imperdiet lorem. Integer non luctus orci.
-> Mauris tempus mi ut blandit ornare.
+[On gatsby starters page](https://www.gatsbyjs.org/starters/?v=2) are amazing templates with much features.
+Unfortunately did't find what I need it means:
 
-```js
-function helloWorld() {
-  console.log('Hello World!')
-}
-```
+- Typescript;
+- cms (netlify, strapi etc.);
+- styled-components;
+- pagination;
+- searcher;
+- **No UI Library!!!**;
+
+My search inspired me to create my own Gatsby starter with all above features.
+My primary goal was as little as possible redundant styles which most users will be removing.
+
+### General feature:
+
+- Typescript with auto generate types with ([gatsby-plugin-graphql-codegen](https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/)) helps;
+- [Netlify CMS](https://www.netlifycms.org/) support. I plan add other cms handling;
+- [styled-components](https://www.styled-components.com/);
+- [pagination](https://www.gatsbyjs.org/packages/gatsby-paginate/);
+- [searcher with elasticlunr](https://www.gatsbyjs.org/packages/@gatsby-contrib/gatsby-plugin-elasticlunr-search/);

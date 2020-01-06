@@ -2799,6 +2799,14 @@ export type Unnamed_1_QueryVariables = {};
 
 export type Unnamed_1_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
 
+export type IndexPageQueryVariables = {};
+
+
+export type IndexPageQuery = { mdx: Maybe<(
+    Pick<Mdx, 'body'>
+    & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title'>> }
+  )> };
+
 export type Unnamed_2_QueryVariables = {};
 
 
@@ -2813,11 +2821,6 @@ export type BlogPostBySlugQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteS
     Pick<Mdx, 'id' | 'excerpt' | 'body'>
     & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'description'>> }
   )> };
-
-export type IndexPageQueryVariables = {};
-
-
-export type IndexPageQuery = { mdx: Maybe<{ frontmatter: Maybe<Pick<MdxFrontmatter, 'description' | 'pageTemplate' | 'title'>>, fields: Maybe<Pick<MdxFields, 'slug'>> }> };
 
 export type Unnamed_3_QueryVariables = {};
 
