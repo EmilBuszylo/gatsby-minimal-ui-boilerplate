@@ -16,7 +16,17 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 
   return (
     <Layout title={pageContent.frontmatter.title}>
-      <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+      <Seo
+        title="Home"
+        keywords={[
+          `blog`,
+          `pagination`,
+          `searcher`,
+          `gatsby`,
+          `javascript`,
+          `react`,
+        ]}
+      />
       <MDXRenderer>{pageContent.body}</MDXRenderer>
     </Layout>
   )

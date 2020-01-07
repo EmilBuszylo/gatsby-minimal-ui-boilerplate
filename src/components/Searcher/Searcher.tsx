@@ -21,7 +21,6 @@ export const createSearchLink = ({
   return slug
 }
 
-// Search component
 export const Searcher: React.FC = () => {
   const [query, setQuery] = useState<string>('')
   const [results, setResults] = useState<ReadonlyArray<SearchResult>>([])

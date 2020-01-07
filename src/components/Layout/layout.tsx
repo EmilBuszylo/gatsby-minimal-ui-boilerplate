@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 
 import { Searcher } from '../Searcher'
@@ -17,30 +16,26 @@ interface HeroProps {
 
 export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
   return (
-    <Location>
-      {({ location }) => (
-        <Wrapper>
-          <Hero image={startupImg}>
-            <span>{title}</span>
-          </Hero>
-          <NavigationExample>
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/404">404</Link>
+    <Wrapper>
+      <Hero image={startupImg}>
+        <span>{title}</span>
+      </Hero>
+      <NavigationExample>
+        <Link to="/">Home</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/404">404</Link>
 
-            <div>
-              <Searcher />
-            </div>
-          </NavigationExample>
-          <PageContent>{children}</PageContent>
-          <Footer>
-            © {new Date().getFullYear()}, Built with{' '}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </Footer>
-        </Wrapper>
-      )}
-    </Location>
+        <div>
+          <Searcher />
+        </div>
+      </NavigationExample>
+      <PageContent>{children}</PageContent>
+      <Footer>
+        © {new Date().getFullYear()}, Built with{' '}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </Footer>
+    </Wrapper>
   )
 }
 

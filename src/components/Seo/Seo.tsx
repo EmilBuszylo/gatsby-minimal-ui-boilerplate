@@ -1,17 +1,14 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import Helmet, { HelmetProps } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface SeoProps {
+interface SeoProps extends HelmetProps {
   description?: string
-  meta?: any
   keywords?: string[]
-  title: string
 }
 
 export const Seo: React.FC<SeoProps> = ({
   description = '',
-  meta = [],
   keywords = [],
   title,
 }) => {
@@ -71,16 +68,14 @@ export const Seo: React.FC<SeoProps> = ({
           name: `twitter:description`,
           content: metaDescription,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
+      ].concat(
+        keywords.length > 0
+          ? {
+              name: `keywords`,
+              content: keywords.join(`, `),
+            }
+          : []
+      )}
     />
   )
 }
