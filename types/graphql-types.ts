@@ -13,6 +13,8 @@ export type Scalars = {
   Date: any,
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any,
+  /** Serialized elasticlunr search index */
+  SiteSearchIndex_Index: any,
 };
 
 
@@ -1675,6 +1677,8 @@ export type Query = {
   allImageSharp: ImageSharpConnection,
   mdx?: Maybe<Mdx>,
   allMdx: MdxConnection,
+  siteSearchIndex?: Maybe<SiteSearchIndex>,
+  allSiteSearchIndex: SiteSearchIndexConnection,
   site?: Maybe<Site>,
   allSite: SiteConnection,
   sitePlugin?: Maybe<SitePlugin>,
@@ -1830,6 +1834,24 @@ export type QueryMdxArgs = {
 export type QueryAllMdxArgs = {
   filter?: Maybe<MdxFilterInput>,
   sort?: Maybe<MdxSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QuerySiteSearchIndexArgs = {
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  pages?: Maybe<StringQueryOperatorInput>,
+  index?: Maybe<SiteSearchIndex_IndexQueryOperatorInput>
+};
+
+
+export type QueryAllSiteSearchIndexArgs = {
+  filter?: Maybe<SiteSearchIndexFilterInput>,
+  sort?: Maybe<SiteSearchIndexSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -2328,6 +2350,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___minify' |
   'pluginCreator___pluginOptions___path' |
   'pluginCreator___pluginOptions___name' |
+  'pluginCreator___pluginOptions___fields' |
   'pluginCreator___pluginOptions___extensions' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve' |
@@ -2532,6 +2555,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___minify' |
   'pluginOptions___path' |
   'pluginOptions___name' |
+  'pluginOptions___fields' |
   'pluginOptions___extensions' |
   'pluginOptions___gatsbyRemarkPlugins' |
   'pluginOptions___gatsbyRemarkPlugins___resolve' |
@@ -2677,6 +2701,7 @@ export type SitePluginPluginOptions = {
   minify?: Maybe<Scalars['Boolean']>,
   path?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
+  fields?: Maybe<Array<Maybe<Scalars['String']>>>,
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>,
   id?: Maybe<Scalars['String']>,
@@ -2697,6 +2722,7 @@ export type SitePluginPluginOptionsFilterInput = {
   minify?: Maybe<BooleanQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
+  fields?: Maybe<StringQueryOperatorInput>,
   extensions?: Maybe<StringQueryOperatorInput>,
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>,
   id?: Maybe<StringQueryOperatorInput>,
@@ -2762,6 +2788,163 @@ export type SitePluginSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>,
 };
 
+export type SiteSearchIndex = Node & {
+  id: Scalars['ID'],
+  parent?: Maybe<Node>,
+  children: Array<Node>,
+  internal: Internal,
+  pages?: Maybe<Array<Maybe<Scalars['String']>>>,
+  index?: Maybe<Scalars['SiteSearchIndex_Index']>,
+};
+
+
+export type SiteSearchIndex_IndexQueryOperatorInput = {
+  eq?: Maybe<Scalars['SiteSearchIndex_Index']>,
+  ne?: Maybe<Scalars['SiteSearchIndex_Index']>,
+  in?: Maybe<Array<Maybe<Scalars['SiteSearchIndex_Index']>>>,
+  nin?: Maybe<Array<Maybe<Scalars['SiteSearchIndex_Index']>>>,
+};
+
+export type SiteSearchIndexConnection = {
+  totalCount: Scalars['Int'],
+  edges: Array<SiteSearchIndexEdge>,
+  nodes: Array<SiteSearchIndex>,
+  pageInfo: PageInfo,
+  distinct: Array<Scalars['String']>,
+  group: Array<SiteSearchIndexGroupConnection>,
+};
+
+
+export type SiteSearchIndexConnectionDistinctArgs = {
+  field: SiteSearchIndexFieldsEnum
+};
+
+
+export type SiteSearchIndexConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
+  field: SiteSearchIndexFieldsEnum
+};
+
+export type SiteSearchIndexEdge = {
+  next?: Maybe<SiteSearchIndex>,
+  node: SiteSearchIndex,
+  previous?: Maybe<SiteSearchIndex>,
+};
+
+export type SiteSearchIndexFieldsEnum = 
+  'id' |
+  'parent___id' |
+  'parent___parent___id' |
+  'parent___parent___parent___id' |
+  'parent___parent___parent___children' |
+  'parent___parent___children' |
+  'parent___parent___children___id' |
+  'parent___parent___children___children' |
+  'parent___parent___internal___content' |
+  'parent___parent___internal___contentDigest' |
+  'parent___parent___internal___description' |
+  'parent___parent___internal___fieldOwners' |
+  'parent___parent___internal___ignoreType' |
+  'parent___parent___internal___mediaType' |
+  'parent___parent___internal___owner' |
+  'parent___parent___internal___type' |
+  'parent___children' |
+  'parent___children___id' |
+  'parent___children___parent___id' |
+  'parent___children___parent___children' |
+  'parent___children___children' |
+  'parent___children___children___id' |
+  'parent___children___children___children' |
+  'parent___children___internal___content' |
+  'parent___children___internal___contentDigest' |
+  'parent___children___internal___description' |
+  'parent___children___internal___fieldOwners' |
+  'parent___children___internal___ignoreType' |
+  'parent___children___internal___mediaType' |
+  'parent___children___internal___owner' |
+  'parent___children___internal___type' |
+  'parent___internal___content' |
+  'parent___internal___contentDigest' |
+  'parent___internal___description' |
+  'parent___internal___fieldOwners' |
+  'parent___internal___ignoreType' |
+  'parent___internal___mediaType' |
+  'parent___internal___owner' |
+  'parent___internal___type' |
+  'children' |
+  'children___id' |
+  'children___parent___id' |
+  'children___parent___parent___id' |
+  'children___parent___parent___children' |
+  'children___parent___children' |
+  'children___parent___children___id' |
+  'children___parent___children___children' |
+  'children___parent___internal___content' |
+  'children___parent___internal___contentDigest' |
+  'children___parent___internal___description' |
+  'children___parent___internal___fieldOwners' |
+  'children___parent___internal___ignoreType' |
+  'children___parent___internal___mediaType' |
+  'children___parent___internal___owner' |
+  'children___parent___internal___type' |
+  'children___children' |
+  'children___children___id' |
+  'children___children___parent___id' |
+  'children___children___parent___children' |
+  'children___children___children' |
+  'children___children___children___id' |
+  'children___children___children___children' |
+  'children___children___internal___content' |
+  'children___children___internal___contentDigest' |
+  'children___children___internal___description' |
+  'children___children___internal___fieldOwners' |
+  'children___children___internal___ignoreType' |
+  'children___children___internal___mediaType' |
+  'children___children___internal___owner' |
+  'children___children___internal___type' |
+  'children___internal___content' |
+  'children___internal___contentDigest' |
+  'children___internal___description' |
+  'children___internal___fieldOwners' |
+  'children___internal___ignoreType' |
+  'children___internal___mediaType' |
+  'children___internal___owner' |
+  'children___internal___type' |
+  'internal___content' |
+  'internal___contentDigest' |
+  'internal___description' |
+  'internal___fieldOwners' |
+  'internal___ignoreType' |
+  'internal___mediaType' |
+  'internal___owner' |
+  'internal___type' |
+  'pages' |
+  'index';
+
+export type SiteSearchIndexFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  pages?: Maybe<StringQueryOperatorInput>,
+  index?: Maybe<SiteSearchIndex_IndexQueryOperatorInput>,
+};
+
+export type SiteSearchIndexGroupConnection = {
+  totalCount: Scalars['Int'],
+  edges: Array<SiteSearchIndexEdge>,
+  nodes: Array<SiteSearchIndex>,
+  pageInfo: PageInfo,
+  field: Scalars['String'],
+  fieldValue?: Maybe<Scalars['String']>,
+};
+
+export type SiteSearchIndexSortInput = {
+  fields?: Maybe<Array<Maybe<SiteSearchIndexFieldsEnum>>>,
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>,
+};
+
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
@@ -2793,6 +2976,11 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>,
   glob?: Maybe<Scalars['String']>,
 };
+
+export type SearchIndexQueryQueryVariables = {};
+
+
+export type SearchIndexQueryQuery = { siteSearchIndex: Maybe<Pick<SiteSearchIndex, 'index'>> };
 
 export type Unnamed_1_QueryVariables = {};
 

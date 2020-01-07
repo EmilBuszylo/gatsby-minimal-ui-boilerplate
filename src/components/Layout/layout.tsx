@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 
+import { Searcher } from '../Searcher'
+
 import startupImg from '../../../content/assets/startup.png'
 
 interface LayoutProps {
@@ -26,6 +28,10 @@ export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
             <Link to="/blog">Blog</Link>
             <Link to="/products">Products</Link>
             <Link to="/404">404</Link>
+
+            <div>
+              <Searcher />
+            </div>
           </NavigationExample>
           <PageContent>{children}</PageContent>
           <Footer>
