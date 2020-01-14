@@ -2348,14 +2348,13 @@ export type SitePageFieldsEnum =
   'pluginCreator___name' |
   'pluginCreator___version' |
   'pluginCreator___pluginOptions___minify' |
-  'pluginCreator___pluginOptions___path' |
-  'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___fields' |
   'pluginCreator___pluginOptions___extensions' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve' |
   'pluginCreator___pluginOptions___id' |
   'pluginCreator___pluginOptions___includeInDevelopment' |
+  'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___short_name' |
   'pluginCreator___pluginOptions___start_url' |
   'pluginCreator___pluginOptions___background_color' |
@@ -2365,6 +2364,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___codegen' |
   'pluginCreator___pluginOptions___codegenDelay' |
+  'pluginCreator___pluginOptions___path' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2553,8 +2553,6 @@ export type SitePluginFieldsEnum =
   'name' |
   'version' |
   'pluginOptions___minify' |
-  'pluginOptions___path' |
-  'pluginOptions___name' |
   'pluginOptions___fields' |
   'pluginOptions___extensions' |
   'pluginOptions___gatsbyRemarkPlugins' |
@@ -2573,6 +2571,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage' |
   'pluginOptions___id' |
   'pluginOptions___includeInDevelopment' |
+  'pluginOptions___name' |
   'pluginOptions___short_name' |
   'pluginOptions___start_url' |
   'pluginOptions___background_color' |
@@ -2582,6 +2581,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___fileName' |
   'pluginOptions___codegen' |
   'pluginOptions___codegenDelay' |
+  'pluginOptions___path' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2699,13 +2699,12 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   minify?: Maybe<Scalars['Boolean']>,
-  path?: Maybe<Scalars['String']>,
-  name?: Maybe<Scalars['String']>,
   fields?: Maybe<Array<Maybe<Scalars['String']>>>,
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>,
   id?: Maybe<Scalars['String']>,
   includeInDevelopment?: Maybe<Scalars['Boolean']>,
+  name?: Maybe<Scalars['String']>,
   short_name?: Maybe<Scalars['String']>,
   start_url?: Maybe<Scalars['String']>,
   background_color?: Maybe<Scalars['String']>,
@@ -2715,18 +2714,18 @@ export type SitePluginPluginOptions = {
   fileName?: Maybe<Scalars['String']>,
   codegen?: Maybe<Scalars['Boolean']>,
   codegenDelay?: Maybe<Scalars['Int']>,
+  path?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
   minify?: Maybe<BooleanQueryOperatorInput>,
-  path?: Maybe<StringQueryOperatorInput>,
-  name?: Maybe<StringQueryOperatorInput>,
   fields?: Maybe<StringQueryOperatorInput>,
   extensions?: Maybe<StringQueryOperatorInput>,
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>,
   id?: Maybe<StringQueryOperatorInput>,
   includeInDevelopment?: Maybe<BooleanQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
   short_name?: Maybe<StringQueryOperatorInput>,
   start_url?: Maybe<StringQueryOperatorInput>,
   background_color?: Maybe<StringQueryOperatorInput>,
@@ -2736,6 +2735,7 @@ export type SitePluginPluginOptionsFilterInput = {
   fileName?: Maybe<StringQueryOperatorInput>,
   codegen?: Maybe<BooleanQueryOperatorInput>,
   codegenDelay?: Maybe<IntQueryOperatorInput>,
+  path?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
