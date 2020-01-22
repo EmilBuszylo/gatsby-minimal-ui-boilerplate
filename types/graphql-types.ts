@@ -2992,7 +2992,7 @@ export type IndexPageQueryVariables = {};
 
 export type IndexPageQuery = { mdx: Maybe<(
     Pick<Mdx, 'body'>
-    & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title'>> }
+    & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title' | 'description'>> }
   )> };
 
 export type Unnamed_2_QueryVariables = {};

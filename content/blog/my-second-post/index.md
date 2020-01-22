@@ -3,6 +3,7 @@ pageTemplate: 'blogPostTemplate'
 pagePrefixPath: 'blog'
 title: My Second Post!
 date: '2019-01-05T23:46:37.121Z'
+description: 'example description for this post'
 ---
 
 ## Fusce eu accumsan ante and second post!

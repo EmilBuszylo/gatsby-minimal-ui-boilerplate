@@ -3,6 +3,7 @@ pageTemplate: 'productTemplate'
 pagePrefixPath: 'products'
 title: Hello World Product
 date: '2019-01-06T22:12:03.284Z'
+description: 'example description for this product'
 ---
 
 # First fake product !!

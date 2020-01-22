@@ -3,6 +3,7 @@ pageTemplate: 'productTemplate'
 pagePrefixPath: 'products'
 title: And Another Product!
 date: '2019-01-08T23:46:37.121Z'
+description: 'example description for this product'
 ---
 
 # Wow! I is example product number 5 !!

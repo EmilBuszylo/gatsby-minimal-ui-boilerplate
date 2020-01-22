@@ -26,6 +26,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
           `javascript`,
           `react`,
         ]}
+        description="description"
       />
       <MDXRenderer>{pageContent.body}</MDXRenderer>
     </Layout>
@@ -40,6 +41,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        description
       }
     }
   }

@@ -3,6 +3,7 @@ pageTemplate: 'homePageTemplate'
 pagePrefixPath: ''
 title: Home page
 date: '2019-01-05T22:12:03.284Z'
+description: 'example description for this page'
 ---
 
 ## Gatsby minimal boilerplate for quick start

@@ -3,6 +3,7 @@ pageTemplate: 'blogPostTemplate'
 pagePrefixPath: 'blog'
 title: Hello World
 date: '2019-01-05T22:12:03.284Z'
+description: 'example description for this post'
 ---
 
 ## Lorem ipsum dolor sit amet, consectetur adipiscing elit.
