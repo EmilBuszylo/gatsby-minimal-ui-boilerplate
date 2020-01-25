@@ -19,8 +19,14 @@ My primary goal was as little as possible redundant styles which most users will
 
 ### General feature:
 
+- **No UI Library!!!**
 - Typescript with auto generate types with ([gatsby-plugin-graphql-codegen](https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/)) helps;
 - [Netlify CMS](https://www.netlifycms.org/) support. I plan add other cms handling;
 - [styled-components](https://www.styled-components.com/);
 - [pagination](https://www.gatsbyjs.org/packages/gatsby-paginate/);
 - [searcher with elasticlunr](https://www.gatsbyjs.org/packages/@gatsby-contrib/gatsby-plugin-elasticlunr-search/);
+
+### Roadmap of project:
+
+[Roadmap: https://trello.com/b/lzc2ebfZ/gatsby-minimal-boilerplate](https://trello.com/b/lzc2ebfZ/gatsby-minimal-boilerplate)
+
