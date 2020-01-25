@@ -2,8 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby minimal boilerplate`,
     author: `Emil Buszyło`,
-    description: `Gatsby minimal boilerplate`,
-    siteUrl: 'https://test.pl',
+    description: `Gatsby minimal boilerplate project`,
+    siteUrl: 'https://test.io',
+    logo: `content/assets/gatsby-icon.png`,
+    fbPageId: `YOUR_FB_PAGE_ID`,
+    dateModified: new Date(),
   },
   plugins: [
     `gatsby-plugin-typescript`,

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { createHistory, LocationProvider } from '@reach/router'
 
 import { Searcher } from '../Searcher'
 
@@ -14,28 +15,32 @@ interface HeroProps {
   image?: string
 }
 
+const history = createHistory(window)
+
 export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
   return (
-    <Wrapper>
-      <Hero image={startupImg}>
-        <span>{title}</span>
-      </Hero>
-      <NavigationExample>
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/404">404</Link>
+    <LocationProvider history={history}>
+      <Wrapper>
+        <Hero image={startupImg}>
+          <span>{title}</span>
+        </Hero>
+        <NavigationExample>
+          <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/404">404</Link>
 
-        <div>
-          <Searcher />
-        </div>
-      </NavigationExample>
-      <PageContent>{children}</PageContent>
-      <Footer>
-        © {new Date().getFullYear()}, Built with{' '}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </Footer>
-    </Wrapper>
+          <div>
+            <Searcher />
+          </div>
+        </NavigationExample>
+        <PageContent>{children}</PageContent>
+        <Footer>
+          © {new Date().getFullYear()}, Built with{' '}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </Footer>
+      </Wrapper>
+    </LocationProvider>
   )
 }
 

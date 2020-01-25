@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { LocationProvider } from '@reach/router'
 
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
@@ -20,35 +21,39 @@ const Blog: React.FC<BlogProps> = ({ pageContext, data }) => {
 
   const siteTitle = data.site.siteMetadata.title
   return (
-    <Layout title={siteTitle}>
-      <Seo title="All posts" />
-      <div>
-        {group.map(({ node }) => {
-          return (
-            <BlogPostLink
-              key={node.fields.slug}
-              to={`/blog${node.fields.slug}`}
-            >
-              <small>{node.frontmatter.date}</small>
-              <h3>{node.frontmatter.title}</h3>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
+    <LocationProvider>
+      {locationContext => (
+        <Layout title={siteTitle}>
+          <Seo title="All posts" location={locationContext.location.pathname} />
+          <div>
+            {group.map(({ node }) => {
+              return (
+                <BlogPostLink
+                  key={node.fields.slug}
+                  to={`/blog${node.fields.slug}`}
+                >
+                  <small>{node.frontmatter.date}</small>
+                  <h3>{node.frontmatter.title}</h3>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </BlogPostLink>
+              )
+            })}
+            <Pagination>
+              <PaginationElement
+                test={first}
+                url={previousUrl}
+                text="Previous page"
               />
-            </BlogPostLink>
-          )
-        })}
-        <Pagination>
-          <PaginationElement
-            test={first}
-            url={previousUrl}
-            text="Previous page"
-          />
-          <PaginationElement test={last} url={nextUrl} text="Next page" />
-        </Pagination>
-      </div>
-    </Layout>
+              <PaginationElement test={last} url={nextUrl} text="Next page" />
+            </Pagination>
+          </div>
+        </Layout>
+      )}
+    </LocationProvider>
   )
 }
 
