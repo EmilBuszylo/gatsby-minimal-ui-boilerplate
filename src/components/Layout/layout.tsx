@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { createHistory, LocationProvider } from '@reach/router'
+import {
+  createHistory,
+  LocationProvider,
+  createMemorySource,
+} from '@reach/router'
 
 import { Searcher } from '../Searcher'
 
@@ -15,7 +19,8 @@ interface HeroProps {
   image?: string
 }
 
-const history = createHistory(window)
+const source = createMemorySource('/')
+const history = createHistory(source)
 
 export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
   return (
