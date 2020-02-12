@@ -57,6 +57,7 @@
     "eslint": "^6.8.0",
     "gatsby-plugin-graphql-codegen": "^2.0.1",
     "gatsby-plugin-typescript": "^2.1.23",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "typescript-styled-plugin": "^0.15.0"
   }
 }
