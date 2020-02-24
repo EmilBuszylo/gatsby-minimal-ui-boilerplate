@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
 import { LocationProvider } from '@reach/router';
 
 import { Layout } from '../components/Layout';
@@ -31,7 +30,7 @@ const ProductsListing: React.FC<ProductsListingProps> = ({
           <div>
             {group.map(({ node }) => {
               return (
-                <BlogPostLink
+                <Link
                   key={node.fields.slug}
                   to={`/products${node.fields.slug}`}
                 >
@@ -42,18 +41,18 @@ const ProductsListing: React.FC<ProductsListingProps> = ({
                       __html: node.frontmatter.description || node.excerpt,
                     }}
                   />
-                </BlogPostLink>
+                </Link>
               );
             })}
           </div>
-          <Pagination>
+          <div>
             <PaginationElement
               test={first}
               url={previousUrl}
               text="Previous page"
             />
             <PaginationElement test={last} url={nextUrl} text="Next page" />
-          </Pagination>
+          </div>
         </Layout>
       )}
     </LocationProvider>
@@ -61,21 +60,6 @@ const ProductsListing: React.FC<ProductsListingProps> = ({
 };
 
 export default ProductsListing;
-
-const BlogPostLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Pagination = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-`;
 
 export const pageQuery = graphql`
   query {
