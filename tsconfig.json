@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "module": "CommonJS",
+    "target": "esnext",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
@@ -8,17 +10,16 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noEmit": true,
-    "module": "CommonJS",
+    "strict": true,
+    "strictNullChecks": false,
     "plugins": [
       {
         "name": "typescript-styled-plugin"
       }
-    ],
-    "target": "esnext"
+    ]
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "exclude": ["node_modules/*", "public/*", "content/", ".cache/", ".static/"]

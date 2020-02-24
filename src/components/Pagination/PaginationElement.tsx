@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
 interface PaginationElementProps {
-  text: string
-  test: boolean
-  url: string
+  text: string;
+  test: boolean;
+  url: string;
 }
 
 export const PaginationElement: React.FC<PaginationElementProps> = ({
@@ -13,8 +13,8 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
   test,
 }) => {
   if (test) {
-    return null
+    return null;
   } else {
-    return <Link to={url}>{text}</Link>
+    return <Link to={url}>{text}</Link>;
   }
-}
+};

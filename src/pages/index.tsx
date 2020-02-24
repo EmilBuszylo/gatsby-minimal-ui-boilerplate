@@ -1,19 +1,19 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { LocationProvider } from '@reach/router'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { LocationProvider } from '@reach/router';
 
-import { Layout } from '../components/Layout'
-import { Seo } from '../components/Seo'
+import { Layout } from '../components/Layout';
+import { Seo } from '../components/Seo';
 
-import { IndexPageQuery } from '../../types/graphql-types'
+import { IndexPageQuery } from '../../types/graphql-types';
 
 interface IndexPageProps {
-  data: IndexPageQuery
+  data: IndexPageQuery;
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
-  const pageContent = data.mdx
+  const pageContent = data.mdx;
 
   return (
     <LocationProvider>
@@ -29,10 +29,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         </Layout>
       )}
     </LocationProvider>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPage {
@@ -44,4 +44,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

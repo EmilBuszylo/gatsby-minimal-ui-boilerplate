@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import { Layout } from '../components/Layout'
-import { Seo } from '../components/Seo'
+import { Layout } from '../components/Layout';
+import { Seo } from '../components/Seo';
 
 const NotFoundPage: React.FC<{}> = () => {
   return (
@@ -10,7 +10,7 @@ const NotFoundPage: React.FC<{}> = () => {
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... Please try again :)</p>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

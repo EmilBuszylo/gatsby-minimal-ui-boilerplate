@@ -1,14 +1,14 @@
-import React from 'react'
-import Helmet, { HelmetProps } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import Helmet, { HelmetProps } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface SeoProps extends HelmetProps {
-  description?: string
-  keywords?: string
-  image?: string
-  location?: string
-  schema?: any
-  lang?: string
+  description?: string;
+  keywords?: string;
+  image?: string;
+  location?: string;
+  schema?: any;
+  lang?: string;
 }
 
 export const Seo: React.FC<SeoProps> = ({
@@ -36,11 +36,11 @@ export const Seo: React.FC<SeoProps> = ({
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const ogImage = image || site.siteMetadata.logo
-  const metaCanonical = location || site.siteMetadata.siteUrl
+  const metaDescription = description || site.siteMetadata.description;
+  const ogImage = image || site.siteMetadata.logo;
+  const metaCanonical = location || site.siteMetadata.siteUrl;
 
   const defaultSchema = {
     '@context': 'https://schema.org',
@@ -64,9 +64,9 @@ export const Seo: React.FC<SeoProps> = ({
         description: metaDescription,
       },
     ],
-  }
+  };
 
-  const schemaOrg = schema || defaultSchema
+  const schemaOrg = schema || defaultSchema;
 
   return (
     <Helmet
@@ -138,5 +138,5 @@ export const Seo: React.FC<SeoProps> = ({
         { type: 'application/ld+json', innerHTML: JSON.stringify(schemaOrg) },
       ]}
     />
-  )
-}
+  );
+};

@@ -1,19 +1,19 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { LocationProvider } from '@reach/router'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { LocationProvider } from '@reach/router';
 
-import { Layout } from '../components/Layout'
-import { Seo } from '../components/Seo'
-import { BlogPostBySlugQuery } from '../../types/graphql-types'
+import { Layout } from '../components/Layout';
+import { Seo } from '../components/Seo';
+import { BlogPostBySlugQuery } from '../../types/graphql-types';
 
 interface BlogPostTemplateProps {
-  data: BlogPostBySlugQuery
+  data: BlogPostBySlugQuery;
 }
 
 const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({ data }) => {
-  const post = data.mdx
-  const siteTitle = data.site.siteMetadata.title
+  const post = data.mdx;
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <LocationProvider>
@@ -29,10 +29,10 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({ data }) => {
         </Layout>
       )}
     </LocationProvider>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -53,4 +53,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

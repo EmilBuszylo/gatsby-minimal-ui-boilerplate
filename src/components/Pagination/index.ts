@@ -1,1 +1,1 @@
-export { PaginationElement } from './PaginationElement'
+export { PaginationElement } from './PaginationElement';

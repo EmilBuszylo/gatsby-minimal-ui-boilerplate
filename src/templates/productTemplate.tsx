@@ -1,20 +1,20 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { LocationProvider } from '@reach/router'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { LocationProvider } from '@reach/router';
 
-import { Layout } from '../components/Layout'
-import { Seo } from '../components/Seo'
+import { Layout } from '../components/Layout';
+import { Seo } from '../components/Seo';
 
-import { ProductBySlugQuery } from '../../types/graphql-types'
+import { ProductBySlugQuery } from '../../types/graphql-types';
 
 interface ProductTemplateProps {
-  data: ProductBySlugQuery
+  data: ProductBySlugQuery;
 }
 
 const productTemplate: React.FC<ProductTemplateProps> = ({ data }) => {
-  const post = data.mdx
-  const siteTitle = data.site.siteMetadata.title
+  const post = data.mdx;
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <LocationProvider>
@@ -30,10 +30,10 @@ const productTemplate: React.FC<ProductTemplateProps> = ({ data }) => {
         </Layout>
       )}
     </LocationProvider>
-  )
-}
+  );
+};
 
-export default productTemplate
+export default productTemplate;
 
 export const pageQuery = graphql`
   query productBySlug($slug: String!) {
@@ -54,4 +54,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

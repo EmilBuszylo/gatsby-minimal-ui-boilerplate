@@ -1,26 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 import {
   createHistory,
   LocationProvider,
   createMemorySource,
-} from '@reach/router'
+} from '@reach/router';
 
-import { Searcher } from '../Searcher'
+import { Searcher } from '../Searcher';
 
-import startupImg from '../../../content/assets/startup.png'
+import startupImg from '../../../content/assets/startup.png';
 
 interface LayoutProps {
-  title: string
+  title: string;
 }
 
 interface HeroProps {
-  image?: string
+  image?: string;
 }
 
-const source = createMemorySource('/')
-const history = createHistory(source)
+const source = createMemorySource('/');
+const history = createHistory(source);
 
 export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
   return (
@@ -46,14 +46,14 @@ export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
         </Footer>
       </Wrapper>
     </LocationProvider>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 40px auto 100px;
-`
+`;
 
 const Hero = styled.div<HeroProps>`
   background: url(${({ image }) => (image ? image : '')}) center center
@@ -67,7 +67,7 @@ const Hero = styled.div<HeroProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const NavigationExample = styled.nav`
   display: flex;
@@ -76,7 +76,7 @@ const NavigationExample = styled.nav`
   max-width: 980px;
   margin: 0 auto;
   width: 100%;
-`
+`;
 
 const PageContent = styled.main`
   width: 100%;
@@ -84,9 +84,9 @@ const PageContent = styled.main`
   margin: 32px auto;
   min-height: 50vh;
   height: 100%;
-`
+`;
 
 const Footer = styled.footer`
   text-align: center;
   margin: 24px;
-`
+`;
