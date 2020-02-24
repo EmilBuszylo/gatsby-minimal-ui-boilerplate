@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { LocationProvider } from '@reach/router';
 
@@ -7,23 +7,21 @@ import { Layout } from '../components/Layout';
 import { Seo } from '../components/Seo';
 import { PaginationElement } from '../components/Pagination';
 
-import { Unnamed_1_Query, SitePageContext } from '../../types/graphql-types';
+import { SitePageContext } from '../../types/graphql-types';
 
 interface BlogProps {
-  data: Unnamed_1_Query;
   pageContext: SitePageContext;
 }
 
-const Blog: React.FC<BlogProps> = ({ pageContext, data }) => {
+const Blog: React.FC<BlogProps> = ({ pageContext }) => {
   const { group, index, first, last } = pageContext;
   const previousUrl = index - 1 == 1 ? '/blog' : `/blog/${index - 1}`;
   const nextUrl = `/blog/${index + 1}`;
 
-  const siteTitle = data.site.siteMetadata.title;
   return (
     <LocationProvider>
       {locationContext => (
-        <Layout title={siteTitle}>
+        <Layout title={'Blog'}>
           <Seo title="All posts" location={locationContext.location.pathname} />
           <div>
             {group.map(({ node }) => {
@@ -72,14 +70,4 @@ const Pagination = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-`;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
 `;

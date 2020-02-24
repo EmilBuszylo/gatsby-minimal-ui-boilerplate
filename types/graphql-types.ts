@@ -3012,32 +3012,22 @@ export type IndexPageQuery = { mdx: Maybe<(
     & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title' | 'description'>> }
   )> };
 
-export type Unnamed_2_QueryVariables = {};
-
-
-export type Unnamed_2_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
 export type BlogPostBySlugQueryVariables = {
   slug: Scalars['String']
 };
 
 
-export type BlogPostBySlugQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }>, mdx: Maybe<(
+export type BlogPostBySlugQuery = { mdx: Maybe<(
     Pick<Mdx, 'id' | 'excerpt' | 'body'>
     & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'description'>> }
   )> };
-
-export type Unnamed_3_QueryVariables = {};
-
-
-export type Unnamed_3_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type ProductBySlugQueryVariables = {
   slug: Scalars['String']
 };
 
 
-export type ProductBySlugQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }>, mdx: Maybe<(
+export type ProductBySlugQuery = { mdx: Maybe<(
     Pick<Mdx, 'id' | 'excerpt' | 'body'>
     & { frontmatter: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'description'>> }
   )> };

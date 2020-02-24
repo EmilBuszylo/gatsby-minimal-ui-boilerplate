@@ -27,14 +27,13 @@ export const Layout: React.FC<LayoutProps> = ({ title, children }) => {
     <LocationProvider history={history}>
       <Wrapper>
         <Hero image={startupImg}>
-          <span>{title}</span>
+          <h1>{title}</h1>
         </Hero>
         <NavigationExample>
           <Link to="/">Home</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/products">Products</Link>
           <Link to="/404">404</Link>
-
           <div>
             <Searcher />
           </div>

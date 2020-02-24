@@ -13,12 +13,11 @@ interface BlogPostTemplateProps {
 
 const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({ data }) => {
   const post = data.mdx;
-  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <LocationProvider>
       {locationContext => (
-        <Layout title={siteTitle}>
+        <Layout title={post.frontmatter.title}>
           <Seo
             title={post.frontmatter.title}
             description={post.frontmatter.description || post.excerpt}
@@ -36,12 +35,6 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
     mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
