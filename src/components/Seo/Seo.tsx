@@ -49,7 +49,7 @@ export const Seo: React.FC<SeoProps> = ({
         '@type': 'WebSite',
         '@id': `${metaCanonical}/#website`,
         url: metaCanonical,
-        name: '3LABteam Druk 3D Elektronika Frezowanie Warszawa',
+        name: 'Gatsby minimal boilerplate project',
         description: metaDescription,
       },
       {

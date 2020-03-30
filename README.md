@@ -5,7 +5,7 @@
 When I wanted start my new gatsby project, lost a lot of time searching a matching template for my needs.
 
 [On gatsby starters page](https://www.gatsbyjs.org/starters/?v=2) are amazing templates with much features.
-Unfortunately did't find what I need it means:
+Unfortunately didn't find what I need it means:
 
 - Typescript;
 - cms (netlify, strapi etc.);
@@ -26,6 +26,12 @@ My primary goal was as little as possible redundant styles which most users will
 - Blog posts and shop products taxonomy;
 - [pagination](https://www.gatsbyjs.org/packages/gatsby-paginate/);
 - [searcher with elasticlunr](https://www.gatsbyjs.org/packages/@gatsby-contrib/gatsby-plugin-elasticlunr-search/);
+
+### How to develop
+
+- Install dependencies with `yarn` or `npm` install
+
+- Run the development server `yarn start` or `npm run start`
 
 ### Roadmap of project:
 

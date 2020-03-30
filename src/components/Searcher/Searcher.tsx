@@ -53,7 +53,6 @@ export const Searcher: React.FC = () => {
       <ul>
         {results.map(page => (
           <li key={page.id}>
-            {console.log(page)}
             {page.slug !== null ? (
               <Link
                 to={createSearchLink({
